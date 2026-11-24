@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "uizze.visual-evidence.v1",
+  "scope": "Desk filter names announce the label and the count separately. Existing paper and ink system kept.",
+  "platform": "web",
+  "sources": [
+    {
+      "path": "../src/components/desk/desk-workspace.tsx",
+      "sha256": "9cc658987324bbab5302c5aef2e9119c1eedfa1be1ab331559d6e359a13653b4"
+    }
+  ],
+  "comparison": "existing-system",
+  "requiredChecks": [
+    { "id": "desk-filters", "kind": "interaction" }
+  ],
+  "checks": [
+    {
+      "id": "desk-filters",
+      "status": "pass",
+      "state": "Agent desk, All filter selected, 18 conversations",
+      "environment": { "kind": "browser", "name": "Chrome", "width": 1280, "height": 800 },
+      "observed": "The selected All chip is light text on the black pill. The accessible name is All 18, and the other filters read Needs a person 2, Human owned 3, AI active 9, and Resolved 4.",
+      "steps": [
+        "Open http://127.0.0.1:3000/desk",
+        "Read the filter button names",
+        "Screenshot the desk"
+      ],
+      "artifacts": [
+        {
+          "path": "desk-filters.png",
+          "kind": "image",
+          "sha256": "16ccdb92792122552e4d4c7391fb9ad38f27219542fcbe8ff0c3a62570171329"
+        }
+      ]
+    }
+  ],
+  "unresolved": []
+}

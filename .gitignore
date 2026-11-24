@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+.data/
+*.bak
+.env
+.env.local
+.env*.local
+drizzle/meta/
+playwright-report/
+test-results/
+tsconfig.tsbuildinfo
+.DS_Store
+Godot.app/
+Godot_*.zip
