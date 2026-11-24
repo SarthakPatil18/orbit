@@ -1,7 +1,7 @@
 import type { AuditLog, KnowledgeChunk, KnowledgeSource } from "@/lib/types";
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { orgId } from "@/lib/api/http";
-import { sourceFlags } from "@/lib/services/knowledge";
+import { sourceFlags } from "@/lib/knowledge/sources";
 import { KnowledgeWorkspace } from "@/components/knowledge/knowledge-workspace";
 
 export const dynamic = "force-dynamic";

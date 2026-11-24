@@ -1,5 +1,5 @@
-import { processLifecycleEvent } from "@/lib/services/lifecycle";
-import { getStore } from "@/lib/store";
+import { processLifecycleEvent } from "@/lib/email/lifecycle";
+import { getStore } from "@/lib/database";
 import {
   ApiError,
   assertSameOrigin,
@@ -9,7 +9,7 @@ import {
   route,
 } from "@/lib/api/http";
 import { checkRateLimit, clientKey } from "@/lib/api/rate-limit";
-import { lifecycleEventSchema } from "@/lib/api/validation";
+import { lifecycleEventSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

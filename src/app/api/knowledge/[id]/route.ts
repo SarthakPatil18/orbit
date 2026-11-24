@@ -1,9 +1,9 @@
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import {
   archiveSource,
   sourceFlags,
   updateSource,
-} from "@/lib/services/knowledge";
+} from "@/lib/knowledge/sources";
 import {
   ApiError,
   assertSameOrigin,
@@ -12,7 +12,7 @@ import {
   parseBody,
   route,
 } from "@/lib/api/http";
-import { sourceUpdateSchema } from "@/lib/api/validation";
+import { sourceUpdateSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

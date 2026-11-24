@@ -4,9 +4,9 @@ import type {
   Journey,
   JourneyRun,
 } from "@/lib/types";
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { orgId } from "@/lib/api/http";
-import { sampleJourneyCopy } from "@/lib/services/email";
+import { sampleJourneyCopy } from "@/lib/email/render";
 import { JourneysWorkspace } from "@/components/journeys/journeys-workspace";
 
 export const dynamic = "force-dynamic";

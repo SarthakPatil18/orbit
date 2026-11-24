@@ -1,4 +1,4 @@
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { assertSameOrigin, json, route } from "@/lib/api/http";
 
 export const dynamic = "force-dynamic";

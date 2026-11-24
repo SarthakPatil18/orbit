@@ -1,5 +1,5 @@
-import { runEvaluationSuite } from "@/lib/services/evaluation";
-import { getStore } from "@/lib/store";
+import { runEvaluationSuite } from "@/lib/evaluation/suite";
+import { getStore } from "@/lib/database";
 import {
   ApiError,
   assertSameOrigin,
@@ -9,7 +9,7 @@ import {
   route,
 } from "@/lib/api/http";
 import { checkRateLimit, clientKey } from "@/lib/api/rate-limit";
-import { evalRunSchema } from "@/lib/api/validation";
+import { evalRunSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

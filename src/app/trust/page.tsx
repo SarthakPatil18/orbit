@@ -1,8 +1,8 @@
 import type { EvalCase, EvalResult, EvalRun } from "@/lib/types";
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { orgId } from "@/lib/api/http";
 import { featureReport, getRuntimeConfig } from "@/lib/env";
-import { releaseGates } from "@/lib/evaluation-gates";
+import { releaseGates } from "@/lib/evaluation/gates";
 import { TrustWorkspace } from "@/components/trust/trust-workspace";
 
 export const dynamic = "force-dynamic";

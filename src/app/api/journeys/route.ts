@@ -1,7 +1,7 @@
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { json, orgId, route } from "@/lib/api/http";
-import { sampleJourneyCopy } from "@/lib/services/email";
-import { sourceFlags } from "@/lib/services/knowledge";
+import { sampleJourneyCopy } from "@/lib/email/render";
+import { sourceFlags } from "@/lib/knowledge/sources";
 
 export const dynamic = "force-dynamic";
 

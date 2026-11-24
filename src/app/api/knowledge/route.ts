@@ -1,5 +1,5 @@
-import { getStore } from "@/lib/store";
-import { createSource, sourceFlags } from "@/lib/services/knowledge";
+import { getStore } from "@/lib/database";
+import { createSource, sourceFlags } from "@/lib/knowledge/sources";
 import {
   assertSameOrigin,
   json,
@@ -7,7 +7,7 @@ import {
   parseBody,
   route,
 } from "@/lib/api/http";
-import { sourceCreateSchema } from "@/lib/api/validation";
+import { sourceCreateSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

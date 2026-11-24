@@ -1,5 +1,5 @@
-import { getStore } from "@/lib/store";
-import { reindexSource } from "@/lib/services/knowledge";
+import { getStore } from "@/lib/database";
+import { reindexSource } from "@/lib/knowledge/sources";
 import { assertSameOrigin, json, orgId, route } from "@/lib/api/http";
 
 export const dynamic = "force-dynamic";

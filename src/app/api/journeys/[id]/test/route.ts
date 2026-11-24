@@ -1,5 +1,5 @@
-import { testJourney } from "@/lib/services/lifecycle";
-import { getStore } from "@/lib/store";
+import { testJourney } from "@/lib/email/lifecycle";
+import { getStore } from "@/lib/database";
 import {
   ApiError,
   assertSameOrigin,

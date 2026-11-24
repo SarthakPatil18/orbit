@@ -1,5 +1,5 @@
-import { releaseGates } from "@/lib/services/evaluation";
-import { getStore } from "@/lib/store";
+import { releaseGates } from "@/lib/evaluation/suite";
+import { getStore } from "@/lib/database";
 import { ApiError, json, orgId, route } from "@/lib/api/http";
 
 export const dynamic = "force-dynamic";

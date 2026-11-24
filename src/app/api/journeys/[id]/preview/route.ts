@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { getStore } from "@/lib/store";
-import { renderLifecycleEmail } from "@/lib/services/email";
+import { getStore } from "@/lib/database";
+import { renderLifecycleEmail } from "@/lib/email/render";
 import {
   ApiError,
   assertSameOrigin,

@@ -21,8 +21,8 @@ import {
   XCircle,
 } from "lucide-react";
 import type { EvalCase, EvalMetrics, EvalResult, EvalRun } from "@/lib/types";
-import type { EvalGate } from "@/lib/evaluation-gates";
-import { releaseGates } from "@/lib/evaluation-gates";
+import type { EvalGate } from "@/lib/evaluation/gates";
+import { releaseGates } from "@/lib/evaluation/gates";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 import {
   DecisionBadge,

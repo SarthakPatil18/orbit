@@ -1,5 +1,5 @@
-import { getStore } from "@/lib/store";
-import { audit } from "@/lib/services/audit";
+import { getStore } from "@/lib/database";
+import { audit } from "@/lib/support/audit";
 import {
   ApiError,
   assertSameOrigin,
@@ -8,7 +8,7 @@ import {
   parseBody,
   route,
 } from "@/lib/api/http";
-import { journeyPatchSchema } from "@/lib/api/validation";
+import { journeyPatchSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

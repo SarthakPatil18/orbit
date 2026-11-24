@@ -1,5 +1,5 @@
-import { getStore } from "@/lib/store";
-import { retrievalPlayground } from "@/lib/services/knowledge";
+import { getStore } from "@/lib/database";
+import { retrievalPlayground } from "@/lib/knowledge/sources";
 import {
   assertSameOrigin,
   json,
@@ -7,7 +7,7 @@ import {
   parseBody,
   route,
 } from "@/lib/api/http";
-import { playgroundSchema } from "@/lib/api/validation";
+import { playgroundSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

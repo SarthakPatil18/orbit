@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { orgId, route, json, parseQuery } from "@/lib/api/http";
 
 export const dynamic = "force-dynamic";

@@ -5,7 +5,7 @@ import type {
   Message,
   Queue,
 } from "@/lib/types";
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { orgId } from "@/lib/api/http";
 import { DeskWorkspace, type DeskRow } from "@/components/desk/desk-workspace";
 import { readServerNow } from "@/lib/server-now";

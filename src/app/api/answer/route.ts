@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { answerQuestion } from "@/lib/services/answer";
-import { getStore } from "@/lib/store";
+import { answerQuestion } from "@/lib/ai/answer";
+import { getStore } from "@/lib/database";
 import { orgId, route, json, parseBody, assertSameOrigin, ApiError } from "@/lib/api/http";
 import { checkRateLimit, clientKey } from "@/lib/api/rate-limit";
-import { answerSchema } from "@/lib/api/validation";
+import { answerSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

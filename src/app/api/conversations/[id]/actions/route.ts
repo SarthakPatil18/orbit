@@ -1,7 +1,7 @@
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { newId, nowIso } from "@/lib/ids";
 import type { Message } from "@/lib/types";
-import { audit } from "@/lib/services/audit";
+import { audit } from "@/lib/support/audit";
 import {
   ApiError,
   assertSameOrigin,
@@ -11,7 +11,7 @@ import {
   route,
 } from "@/lib/api/http";
 import { checkRateLimit, clientKey } from "@/lib/api/rate-limit";
-import { conversationActionSchema } from "@/lib/api/validation";
+import { conversationActionSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

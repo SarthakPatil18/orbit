@@ -1,5 +1,5 @@
-import { sendDeliveryNow, queueDelivery } from "@/lib/services/lifecycle";
-import { getStore } from "@/lib/store";
+import { sendDeliveryNow, queueDelivery } from "@/lib/email/lifecycle";
+import { getStore } from "@/lib/database";
 import {
   ApiError,
   assertSameOrigin,

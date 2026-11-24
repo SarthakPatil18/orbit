@@ -1,5 +1,5 @@
-import { emitInactivityEvents } from "@/lib/services/lifecycle";
-import { getStore } from "@/lib/store";
+import { emitInactivityEvents } from "@/lib/email/lifecycle";
+import { getStore } from "@/lib/database";
 import {
   json,
   orgId,

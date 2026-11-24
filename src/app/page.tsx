@@ -17,9 +17,9 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
-import { getStore } from "@/lib/store";
+import { getStore } from "@/lib/database";
 import { orgId } from "@/lib/api/http";
-import { ChatWidget } from "@/components/chat-widget";
+import { ChatWidget } from "@/components/chat/chat-widget";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 import { DecisionBadge, LiveDot, RiskBadge, SectionHeading } from "@/components/ui";
 
