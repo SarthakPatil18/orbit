@@ -100,7 +100,7 @@ npm run build
 npm run start
 ```
 
-Set `NEXT_PUBLIC_APP_URL` to the public origin. Demo mode still needs a persistent disk for `.data/` if more than one process might run, because the file store is single-process. For Postgres, run `npm run db:migrate` and `npm run db:seed` before start. There is no verified public URL in this repository. Do not invent one.
+Set `NEXT_PUBLIC_APP_URL` to the public origin. On Vercel the file store uses `/tmp/proofdesk`, because the function filesystem cannot create `.data`. That copy lasts for one warm instance and is not shared across instances. For a store that survives restarts, set `DATABASE_URL`, then run `npm run db:migrate` and `npm run db:seed`.
 
 ## Docs
 

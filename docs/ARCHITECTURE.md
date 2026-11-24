@@ -90,7 +90,7 @@ Twenty golden cases live in `src/data/seed/cases.ts`. `runEvaluationSuite` in `s
 
 ## Database
 
-`src/lib/database/contract.ts` is the `Store` interface. `src/lib/database/index.ts` picks the adapter. The file adapter writes `.data/proofdesk.json` atomically and reseeds when `SEED_VERSION` changes, keeping a backup of the previous file. The Postgres adapter is `src/lib/database/postgres-store.ts`, with the Drizzle schema in `src/lib/database/schema.ts` and SQL in `drizzle/`.
+`src/lib/database/contract.ts` is the `Store` interface. `src/lib/database/index.ts` picks the adapter. The file adapter writes `.data/proofdesk.json` atomically on a normal machine, and `/tmp/proofdesk/proofdesk.json` on Vercel, where the function directory cannot be created. It reseeds when `SEED_VERSION` changes and keeps a backup of the previous file. The Vercel copy lasts for one warm instance. The Postgres adapter is `src/lib/database/postgres-store.ts`, with the Drizzle schema in `src/lib/database/schema.ts` and SQL in `drizzle/`.
 
 Tables: `organizations`, `agents`, `customers`, `queues`, `knowledge_sources`, `knowledge_chunks`, `conversations`, `messages`, `citations`, `handoffs`, `customer_events`, `journeys`, `journey_enrollments`, `journey_runs`, `deliveries`, `eval_cases`, `eval_runs`, `eval_results`, `audit_logs`.
 

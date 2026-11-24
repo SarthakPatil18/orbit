@@ -104,11 +104,17 @@ export function getRuntimeConfig(): RuntimeConfig {
         : env.DATABASE_URL
           ? "postgres"
           : "file";
+  // Vercel functions can only write under /tmp. A relative .data path
+  // resolves inside /var/task and mkdir fails with ENOENT.
+  const dataDir =
+    process.env.VERCEL === "1" && !env.PROOFDESK_DATA_DIR.startsWith("/")
+      ? "/tmp/proofdesk"
+      : env.PROOFDESK_DATA_DIR;
   return {
     demoMode: env.DEMO_MODE,
     storageDriver,
     appUrl: env.NEXT_PUBLIC_APP_URL.replace(/\/$/, ""),
-    dataDir: env.PROOFDESK_DATA_DIR,
+    dataDir,
     anthropicModel: env.ANTHROPIC_MODEL,
     hasAnthropicKey: Boolean(env.ANTHROPIC_API_KEY),
     hasEmbeddingKey: Boolean(env.VOYAGE_API_KEY),
@@ -163,7 +169,7 @@ export function featureReport(): FeatureStatus[] {
       detail:
         c.storageDriver === "postgres"
           ? "PostgreSQL via Drizzle. Tenant-scoped repositories."
-          : "File-backed demo store at .data/proofdesk.json. Migrations and the PostgreSQL adapter are included; run docker compose + db:migrate for durable Postgres.",
+          : `File-backed demo store at ${c.dataDir}/proofdesk.json. On Vercel this is /tmp and lasts for one warm instance. Migrations and the PostgreSQL adapter are included; run docker compose + db:migrate for durable Postgres.`,
     },
     {
       feature: "Email delivery",

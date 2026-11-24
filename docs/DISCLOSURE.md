@@ -49,7 +49,7 @@ Resend is used only when demo mode is off, `RESEND_API_KEY` is set, and the reci
 
 ## Persistence
 
-The default file is `.data/proofdesk.json`. Conversations, handoffs, journey runs, and deliveries survive a refresh on that instance. Changing `SEED_VERSION` reseeds the file and writes a backup, which drops prior local demo conversations.
+The default local file is `.data/proofdesk.json`. On Vercel the same adapter writes `/tmp/proofdesk/proofdesk.json`, because the function directory is read-only. That copy lasts for one warm instance and is not shared with other instances. Conversations, handoffs, journey runs, and deliveries survive a refresh on that instance. Changing `SEED_VERSION` reseeds the file and writes a backup, which drops prior local demo conversations.
 
 PostgreSQL is optional. Set `DATABASE_URL`, then `npm run db:migrate` and `npm run db:seed`.
 
